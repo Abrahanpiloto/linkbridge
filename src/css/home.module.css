@@ -1,0 +1,140 @@
+/* Reset y variables */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Contenedor principal: mobile-first (columna) */
+.container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centrado horizontal */
+  justify-content: center; /* Centrado vertical */
+  min-height: 100vh;
+  background-image: url("/fondohome.jpg");
+  background-size: 100% 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 25px;
+}
+
+/* En mobile, se muestra primero el bloque de la imagen y su <p> */
+.right {
+  order: -1;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* Sección de texto */
+.left {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* Estilo para la imagen */
+.logo {
+  width: 80%;
+  max-width: 350px;
+  height: auto;
+  margin-bottom: 20px;
+  border-radius: 6px;
+}
+
+/* Título y párrafo en la sección de texto */
+.left h1 {
+  font-size: 2.5rem;
+  color: white;
+  margin-bottom: 20px;
+  text-shadow: 0 0 4px white;
+}
+
+.left p {
+  font-size: clamp(1.3rem, 2vw, 1.8rem);
+  max-width: 500px;
+  line-height: 1.5;
+  color: white;
+  font-size: 1.2rem;
+  text-shadow: 0 0 4px white;
+}
+
+/* Párrafo en la sección de la imagen */
+.right p {
+  font-size: 1.3rem;
+  max-width: 500px;
+  line-height: 1.5;
+  color: white;
+  text-shadow: 0 0 4px white;
+}
+
+/* Media Query para pantallas anchas (tablet/desktop) */
+@media (min-width: 768px) {
+  .container {
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 40px;
+  }
+  .left,
+  .right {
+    flex: 1;
+    margin-bottom: 0;
+    width: auto;
+  }
+  /* Se restablece el orden en desktop */
+  .right {
+    order: 0;
+  }
+}
+
+@keyframes fadeSlideUp {
+  0% {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.left,
+.right {
+  animation: fadeSlideUp 1s ease forwards;
+  opacity: 0; /* oculto al principio, hasta que cargue la animación */
+}
+body {
+  overflow-y: hidden;
+}
+.loginBtn {
+  position: absolute;
+  top: 20px;
+  right: 40px;
+  padding: 5px 20px;
+  /* font-size: 8rem; */
+  font-weight: bold;
+  color: #f4f4f4;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  z-index: 10;
+  background-color: transparent;
+  border: none;
+  /* transition: background-color 0.3s ease, transform 0.3s ease; */
+  /* border: 0.1px solid black; */
+}
+
+.loginBtn:hover {
+  color: #f5a453;
+}

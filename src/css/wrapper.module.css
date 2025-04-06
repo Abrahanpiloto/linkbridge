@@ -1,0 +1,28 @@
+.container {
+  color: white;
+  display: flex;
+  align-items: center;
+}
+nav {
+  display: flex;
+  gap: 1.5rem; /* Espaciado entre los links */
+  align-items: center;
+}
+
+nav a {
+  color: black;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+nav a:hover {
+  color: #e0e0e0;
+}
+
+.logo {
+  position: absolute;
+  left: 1rem;
+  width: 100px;
+  bottom: 0.5rem;
+}

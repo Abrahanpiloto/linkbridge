@@ -1,0 +1,73 @@
+body {
+  background-image: url("/mar.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.loginView {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.logo {
+  width: 380px;
+  padding: 0.6rem;
+  /* display: block; */
+  /* margin: 0 auto; */
+}
+.textContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 1.5rem;
+  color: white;
+  text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.7);
+  padding: 1rem;
+}
+.btn {
+  background-color: #174572;
+  color: #fff;
+  border: none;
+  margin-top: 1rem;
+  padding: 8px 54px;
+  font-size: 16px;
+  font-weight: bold;
+  text-decoration: none;
+  letter-spacing: 1px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  box-shadow: 0 4px 6px rgba(10, 10, 10, 0.5);
+}
+
+/* Colores Google */
+.googlelogo .g1,
+.googlelogo .g2 {
+  color: #4285f4; /* Azul para las G */
+}
+
+.googlelogo .o1 {
+  color: #db4437; /* Rojo para la primera O */
+}
+
+.googlelogo .o2 {
+  color: #f4b400; /* Amarillo para la segunda O */
+}
+
+.googlelogo .l {
+  color: #0f9d58; /* Verde para la L */
+}
+
+.googlelogo .e {
+  color: #db4437; /* Rojo para la E */
+}
+
+.btn:hover {
+  background-color: #0b0f13; /* Tono ligeramente más oscuro */
+  font-weight: bold;
+}

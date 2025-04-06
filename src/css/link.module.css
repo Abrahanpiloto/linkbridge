@@ -1,0 +1,34 @@
+.iconEdit {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  margin-left: 10px;
+  color: rgb(0, 0, 0);
+}
+
+.iconDelete {
+  position: absolute;
+  display: flex;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  left: 180px;
+  color: rgb(179, 37, 37);
+  font-weight: bold;
+}
+
+.cardLink {
+  /* border: 2px solid red; */
+  position: relative;
+  padding: 20px 40px;
+  border-radius: 8px;
+  background-color: #83a6a8;
+  box-shadow: 0 4px 6px rgba(10, 10, 10, 0.5);
+  color: white;
+}
+
+input {
+  border: none;
+  border-radius: 6px;
+  padding: 6px;
+}

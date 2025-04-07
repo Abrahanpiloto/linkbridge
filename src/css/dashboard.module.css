@@ -4,15 +4,15 @@
   align-items: center;
   justify-content: center;
   min-height: 100vh;
-  background-image: url(/public/fondo2.jpg);
-  background-size: 100% 100%;
+  background-image: url(/public/negative.jpg);
+  background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   padding: 20px;
   /* border: 2px solid red; */
 }
 .containerWrapper {
-  background-color: #fefcef;
+  background-color: rgb(249, 245, 159);
   position: fixed;
   top: 0;
   left: 0;
@@ -29,21 +29,25 @@
 
 .containerDouble {
   display: flex;
-  gap: 8rem;
-  border: 2px solid red;
-  padding: 2rem;
+  gap: 18rem;
+  /* border: 2px solid red; */
+  border-radius: 7px;
+  padding: 4rem;
+  background-color: #343434e8;
+  color: whitesmoke;
 }
 
 .containerForm {
   display: flex;
   flex-direction: column;
-  border: 2px solid white;
+  gap: 0.6rem;
+  /* border: 2px solid white; */
   padding: 2rem;
 }
 
 .buttonCreateLink {
-  background-color: #174572;
-  color: #fff;
+  background-color: #f9f59f;
+  color: black;
   border: none;
   margin-top: 1rem;
   padding: 8px 54px;
@@ -59,6 +63,7 @@
 
 .buttonCreateLink:hover {
   background-color: #0b0f13; /* Tono ligeramente más oscuro */
+  color: white;
 }
 
 .containerLinks {

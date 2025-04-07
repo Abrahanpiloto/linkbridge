@@ -15,7 +15,7 @@ function App() {
         <h1>¡Descubre LinkBridge!</h1>
 
         <p>
-          Organiza todos tus links en una única tarjeta digital con un diseño
+          Organiza todos tus links en una única tarjeta digital, con un diseño
           minimalista y elegante. Ideal para profesionales, emprendedores,
           creadores de contenido y cualquier persona que quiera conectar de
           manera efectiva sus redes y recursos. ¡Haz de tus enlaces un puente
@@ -30,7 +30,7 @@ function App() {
       </button>
 
       <div className={style.right}>
-        <img src="/linkbridge.jpg" alt="Logo" className={style.logo} />
+        <img src="/linkbridge-remove.png" alt="Logo" className={style.logo} />
         <p>Un puente hacia tus contenidos.</p>
       </div>
     </div>

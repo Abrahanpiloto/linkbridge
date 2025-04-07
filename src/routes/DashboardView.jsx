@@ -112,7 +112,7 @@ export default function DashboardView() {
       </div>
       <div className={style.containerDouble}>
         <div className={style.formContainer}>
-          <h2 className="h1">Crea tus enlaces aquí</h2>
+          <h1>Crea tus enlaces aquí</h1>
           <form
             className={style.containerForm}
             action=""

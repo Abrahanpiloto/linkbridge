@@ -1,8 +1,5 @@
 body {
-  background-image: url("/mar.jpg");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+  background-color: rgb(249, 245, 159);
 }
 
 .loginView {
@@ -24,10 +21,10 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  font-size: 1.5rem;
-  color: white;
-  text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.7);
-  padding: 1rem;
+  font-size: 1.3rem;
+  color: black;
+  /* text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.7); */
+  /* padding: 1rem; */
 }
 .btn {
   background-color: #174572;
@@ -36,7 +33,7 @@ body {
   margin-top: 1rem;
   padding: 8px 54px;
   font-size: 16px;
-  font-weight: bold;
+  /* font-weight: bold; */
   text-decoration: none;
   letter-spacing: 1px;
   border-radius: 4px;

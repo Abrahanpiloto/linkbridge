@@ -1,8 +1,6 @@
 body {
-  background-image: url("/simon.jpg");
-  background-size: 100% 100%;
-  background-position: center;
-  background-repeat: no-repeat;
+  background-color: rgb(218, 161, 137);
+  font-family: "Roboto Mono", monospace;
 }
 .chooseUsername {
   width: 100%;

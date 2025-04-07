@@ -3,6 +3,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: "Protest Riot", sans-serif;
 }
 
 /* Contenedor principal: mobile-first (columna) */
@@ -13,10 +14,11 @@
   align-items: center; /* Centrado horizontal */
   justify-content: center; /* Centrado vertical */
   min-height: 100vh;
-  background-image: url("/fondohome.jpg");
-  background-size: 100% 100%;
+  /* background-image: url("/negative.jpg"); */
+  background-color: rgb(159, 229, 200);
+  /* background-size: cover;
   background-position: center;
-  background-repeat: no-repeat;
+  background-repeat: no-repeat; */
   padding: 25px;
 }
 
@@ -54,28 +56,28 @@
 
 /* Título y párrafo en la sección de texto */
 .left h1 {
-  font-size: 2.5rem;
-  color: white;
+  font-size: 3.5rem;
+  color: black;
   margin-bottom: 20px;
-  text-shadow: 0 0 4px white;
+  /* text-shadow: 0 0 4px white; */
 }
 
 .left p {
-  font-size: clamp(1.3rem, 2vw, 1.8rem);
+  /* font-size: clamp(1.3rem, 2vw, 1.8rem); */
   max-width: 500px;
   line-height: 1.5;
-  color: white;
-  font-size: 1.2rem;
-  text-shadow: 0 0 4px white;
+  color: black;
+  font-size: 1.3rem;
+  /* text-shadow: 0 0 4px white; */
 }
 
 /* Párrafo en la sección de la imagen */
 .right p {
-  font-size: 1.3rem;
+  font-size: 1.1rem;
   max-width: 500px;
   line-height: 1.5;
-  color: white;
-  text-shadow: 0 0 4px white;
+  color: black;
+  /* text-shadow: 0 0 4px white; */
 }
 
 /* Media Query para pantallas anchas (tablet/desktop) */
@@ -136,5 +138,5 @@ body {
 }
 
 .loginBtn:hover {
-  color: #f5a453;
+  color: rgb(218, 161, 137);
 }

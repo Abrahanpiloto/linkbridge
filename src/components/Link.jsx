@@ -72,7 +72,7 @@ export default function Link({ docId, onDelete, onUpdate, title, url }) {
   return (
     <div key={docId} className={style.cardLink}>
       <div>
-        <div>
+        <div className={style.textRow}>
           {editTitle ? (
             <>
               <input
@@ -85,7 +85,8 @@ export default function Link({ docId, onDelete, onUpdate, title, url }) {
             </>
           ) : (
             <>
-              {currentTitle}
+              <span className={style.textContent}>{currentTitle}</span>
+
               <button onClick={handleEditTitle} className={style.iconEdit}>
                 <span className="material-icons" style={{ fontSize: "16px" }}>
                   edit
@@ -95,7 +96,7 @@ export default function Link({ docId, onDelete, onUpdate, title, url }) {
           )}
         </div>
 
-        <div>
+        <div className={style.textRow}>
           {editUrl ? (
             <>
               <input
@@ -108,7 +109,8 @@ export default function Link({ docId, onDelete, onUpdate, title, url }) {
             </>
           ) : (
             <>
-              {currentUrl}
+              <span className={style.textContent}>{currentUrl}</span>
+
               <button onClick={handleEditUrl} className={style.iconEdit}>
                 <span className="material-icons" style={{ fontSize: "16px" }}>
                   edit

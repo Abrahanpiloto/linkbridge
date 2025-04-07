@@ -2,7 +2,7 @@
   background: transparent;
   border: none;
   cursor: pointer;
-  margin-left: 10px;
+  margin-left: 5px;
   color: rgb(0, 0, 0);
 }
 
@@ -12,23 +12,41 @@
   background: transparent;
   border: none;
   cursor: pointer;
-  left: 180px;
+  right: 6px;
+  bottom: 6px;
   color: rgb(179, 37, 37);
   font-weight: bold;
 }
 
 .cardLink {
   /* border: 2px solid red; */
+  width: 220px; /* ancho fijo */
+  height: 80px; /* alto fijo */
   position: relative;
-  padding: 20px 40px;
+  padding: 10px 32px 10px 10px;
   border-radius: 8px;
-  background-color: #83a6a8;
+  background-color: rgb(249, 245, 159);
   box-shadow: 0 4px 6px rgba(10, 10, 10, 0.5);
-  color: white;
+  color: black;
+  font-size: small;
+  overflow: hidden;
 }
 
 input {
   border: none;
   border-radius: 6px;
   padding: 6px;
+}
+.textRow {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  margin-bottom: 10px;
+}
+
+.textContent {
+  flex: 1; /* ocupa todo el espacio disponible */
+  white-space: nowrap; /* evita que el texto se rompa en varias líneas */
+  overflow: hidden; /* oculta el texto que se desborda */
+  text-overflow: ellipsis; /* muestra puntos suspensivos cuando el texto es muy largo */
 }

@@ -141,7 +141,7 @@ export default function DashboardView() {
         </div>
 
         <div className={style.containerLinks}>
-          {links.map((link) => (
+          {links.slice(0, 6).map((link) => (
             <Link
               key={link.docId}
               docId={link.docId}

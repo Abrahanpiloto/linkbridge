@@ -1,7 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import { useRef, useState } from "react";
 import AuthProvider from "../components/AuthProvider";
-import DashboardWrapper from "../components/DasboarWrapper";
+import WrapperMenu from "../components/WrapperMenu";
 import {
   getProfilePhotoUrl,
   setUserProfilePhoto,
@@ -68,7 +68,7 @@ export default function EditProfileView() {
   }
 
   return (
-    <DashboardWrapper>
+    <WrapperMenu>
       <div>
         <h2 className="h1">Edit Profile Info</h2>
         <div>
@@ -88,6 +88,6 @@ export default function EditProfileView() {
           </div>
         </div>
       </div>
-    </DashboardWrapper>
+    </WrapperMenu>
   );
 }

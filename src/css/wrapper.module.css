@@ -1,11 +1,3 @@
-/* .container {
-  color: white;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 1rem 2rem;
-  position: relative;
-} */
 .containerWrapper {
   background-color: rgb(249, 245, 159);
   position: fixed;

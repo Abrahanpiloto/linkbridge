@@ -1,12 +1,30 @@
-.container {
+/* .container {
   color: white;
   display: flex;
   align-items: center;
+  justify-content: space-between;
+  padding: 1rem 2rem;
+  position: relative;
+} */
+.containerWrapper {
+  background-color: rgb(249, 245, 159);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 3.5rem;
+  display: flex;
+  align-items: center;
+  z-index: 1000;
+  padding: 0 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
 nav {
   display: flex;
   gap: 1.5rem;
   align-items: center;
+  flex: 1;
+  justify-content: center;
 }
 
 nav a {

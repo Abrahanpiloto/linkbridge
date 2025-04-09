@@ -1,7 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import AuthProvider from "../components/AuthProvider";
 import { useState } from "react";
-import DashboardWrapper from "../components/DasboarWrapper";
+import WrapperMenu from "../components/WrapperMenu";
 import {
   deleteLink,
   getLinks,
@@ -107,9 +107,8 @@ export default function DashboardView() {
   }
   return (
     <div className={style.container}>
-      <div className={style.containerWrapper}>
-        <DashboardWrapper />
-      </div>
+      <WrapperMenu />
+
       <div className={style.containerDouble}>
         <div className={style.formContainer}>
           <h1>Crea tus enlaces aquí</h1>

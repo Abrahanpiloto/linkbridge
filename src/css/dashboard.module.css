@@ -9,7 +9,7 @@
   background-position: center;
   background-repeat: no-repeat;
   padding: 20px;
-  border: 2px solid red;
+  /* border: 2px solid red; */
 }
 .containerWrapper {
   background-color: rgb(249, 245, 159);
@@ -29,8 +29,8 @@
 
 .containerDouble {
   display: flex;
-  gap: 18rem;
-  border: 2px solid red;
+  gap: 10rem;
+  /* border: 2px solid red; */
   border-radius: 7px;
   padding: 4rem;
   background-color: #343434e8;

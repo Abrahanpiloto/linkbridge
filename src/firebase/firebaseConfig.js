@@ -65,7 +65,7 @@ export async function registerNewUser(user) {
   try {
     const collectionRef = collection(db, "users");
     const docRef = doc(collectionRef, user.uid);
-    await setDoc(docRef, user);
+    await setDoc(docRef, user, { merge: true });
   } catch (error) {
     console.log(error);
   }

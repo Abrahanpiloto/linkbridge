@@ -41,6 +41,7 @@ export default function AuthProvider({
             displayName: user.displayName,
             profilePicture: "",
             username: "",
+            description: "",
             processCompleted: false,
           });
           // luego se redirige a la vista de eleccion de nombre de usuario osera choose-username:

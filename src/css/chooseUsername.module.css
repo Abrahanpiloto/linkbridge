@@ -1,8 +1,8 @@
 body {
-  background-color: rgb(218, 161, 137);
   font-family: "Roboto Mono", monospace;
 }
 .chooseUsername {
+  background-color: rgb(218, 161, 137);
   width: 100%;
   height: 100vh;
   display: flex;
@@ -19,6 +19,7 @@ body {
   font-size: 1.5rem;
   text-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
   font-family: "Inter", sans-serif;
+  border: 2px solid red;
 }
 
 .input {

@@ -50,16 +50,3 @@ input {
   overflow: hidden; /* oculta el texto que se desborda */
   text-overflow: ellipsis; /* muestra puntos suspensivos cuando el texto es muy largo */
 }
-
-/* Clases para definir colores de fondo alternados */
-.cardColor1 {
-  background-color: rgb(159, 229, 200);
-}
-
-.cardColor2 {
-  background-color: #fdbb9f;
-}
-
-.cardColor3 {
-  background-color: #ddcdfe;
-}

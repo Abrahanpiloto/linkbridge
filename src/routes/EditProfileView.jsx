@@ -7,6 +7,7 @@ import {
   setUserProfilePhoto,
   updateUser,
 } from "../firebase/firebaseConfig";
+import style from "../css/editProfileView.module.css";
 
 export default function EditProfileView() {
   const navigate = useNavigate();
@@ -15,10 +16,17 @@ export default function EditProfileView() {
   const [profileUrl, setProfileUrl] = useState(null);
   const fileRef = useRef();
 
+  // Estado para la descripción guardada (preview) y para el input de texto
+  const [savedDescription, setSavedDescription] = useState("");
+  const [inputDescription, setInputDescription] = useState("");
+
   async function handleUserLoggedIn(user) {
     setCurrentUser(user);
     const url = await getProfilePhotoUrl(user.profilePicture);
     setProfileUrl(url);
+    // Si el usuario ya cuenta con descripción, se la asigna al estado local
+    setSavedDescription(user.description || "");
+    setInputDescription("");
     setState(2);
   }
   function handleUserNotLoggedIn() {
@@ -57,6 +65,19 @@ export default function EditProfileView() {
     }
   }
 
+  // funcion para actualizar el estado local del campo description mientras se escribe:
+  function handleDescriptionChange(e) {
+    setInputDescription(e.target.value);
+  }
+
+  // funcion para guardar la descripcion actualizada en la db firebase y actualiza la UI:
+  async function handleSaveDescription() {
+    const tmp = { ...currentUser, description: inputDescription };
+
+    await updateUser(tmp);
+    setSavedDescription(inputDescription);
+    setInputDescription("");
+  }
   if (state !== 2) {
     return (
       <AuthProvider
@@ -68,26 +89,62 @@ export default function EditProfileView() {
   }
 
   return (
-    <WrapperMenu>
-      <div>
-        <h2 className="h1">Edit Profile Info</h2>
-        <div>
+    <>
+      <WrapperMenu />
+      <div className={style.container}>
+        <div className={style.content}>
+          <h2 className="h1">Edit Profile Info</h2>
           <div>
-            <img src={profileUrl} alt="" width={100} />
-          </div>
-          <div>
-            <button onClick={handleOpenPicker}>
-              Choose new profile picture
+            {/* Aqui se muestra la imagen del usuario */}
+            <div>
+              <img
+                src={profileUrl}
+                alt="Profile"
+                width={100}
+                className={style.image}
+              />
+            </div>
+
+            {/* Boton para cambiar imagen del usuario */}
+            <div>
+              <button onClick={handleOpenPicker} className={style.button}>
+                Choose profile picture
+              </button>
+              <input
+                ref={fileRef}
+                type="file"
+                style={{ display: "none" }}
+                onChange={handleChangeFile}
+              />
+            </div>
+
+            {/* Seccion de descripcion */}
+            <div className={style.description}>
+              {/* Se muestra el texto guardado (preview) solo si el input está vacío */}
+              {!inputDescription && savedDescription && (
+                <div className={style.showDescription}>
+                  <p>{savedDescription}</p>
+                </div>
+              )}
+              <textarea
+                id="description"
+                name="description"
+                rows="4"
+                maxLength="150"
+                value={inputDescription}
+                onChange={handleDescriptionChange}
+                style={{ width: "100%", resize: "none" }}
+                placeholder="Write here your description, your tastes, whatever you want!"
+              />
+            </div>
+
+            {/* Boton de guardado de la descripcion */}
+            <button onClick={handleSaveDescription} className={style.button}>
+              Save Description
             </button>
-            <input
-              ref={fileRef}
-              type="file"
-              style={{ display: "none" }}
-              onChange={handleChangeFile}
-            />
           </div>
         </div>
       </div>
-    </WrapperMenu>
+    </>
   );
 }

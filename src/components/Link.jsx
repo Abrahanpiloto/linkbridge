@@ -1,7 +1,14 @@
 import { useState, useRef, useEffect } from "react";
 import style from "../css/link.module.css";
 
-export default function Link({ docId, onDelete, onUpdate, title, url }) {
+export default function Link({
+  docId,
+  onDelete,
+  onUpdate,
+  title,
+  url,
+  colorClass,
+}) {
   const [currentTitle, setCurrentTitle] = useState(title);
   const [currentUrl, setCurrentUrl] = useState(url);
 
@@ -70,7 +77,7 @@ export default function Link({ docId, onDelete, onUpdate, title, url }) {
     onDelete(docId);
   }
   return (
-    <div key={docId} className={style.cardLink}>
+    <div key={docId} className={`${style.cardLink} ${colorClass}`}>
       <div>
         <div className={style.textRow}>
           {editTitle ? (

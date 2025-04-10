@@ -23,6 +23,9 @@ export default function DashboardView() {
 
   const navigate = useNavigate();
 
+  // Lista de clases a asignar cíclicamente
+  const colorClass = [style.cardColor1, style.cardColor2, style.cardColor3];
+
   async function handleUserLoggedIn(user) {
     setCurrentUser(user);
     setState(2);
@@ -140,16 +143,19 @@ export default function DashboardView() {
         </div>
 
         <div className={style.containerLinks}>
-          {links.slice(0, 6).map((link) => (
-            <Link
-              key={link.docId}
-              docId={link.docId}
-              url={link.url}
-              title={link.title}
-              onUpdate={handleUpdateLink}
-              onDelete={handleDeleteLink}
-            />
-          ))}
+          {links.slice(0, 6).map((link, index) => {
+            return (
+              <Link
+                key={link.docId}
+                docId={link.docId}
+                url={link.url}
+                title={link.title}
+                onUpdate={handleUpdateLink}
+                onDelete={handleDeleteLink}
+                colorClass={colorClass[index % colorClass.length]} // Se pasa la clase dinámica
+              />
+            );
+          })}
         </div>
       </div>
     </div>

@@ -25,8 +25,8 @@
   position: relative;
   padding: 10px 32px 10px 10px;
   border-radius: 8px;
-  background-color: rgb(249, 245, 159);
-  box-shadow: 0 4px 6px rgba(248, 247, 236, 0.5);
+  /* background-color: rgb(249, 245, 159); */
+  /* box-shadow: 0 4px 6px rgba(248, 247, 236, 0.5); */
   color: black;
   font-size: small;
   overflow: hidden;
@@ -49,4 +49,17 @@ input {
   white-space: nowrap; /* evita que el texto se rompa en varias líneas */
   overflow: hidden; /* oculta el texto que se desborda */
   text-overflow: ellipsis; /* muestra puntos suspensivos cuando el texto es muy largo */
+}
+
+/* Clases para definir colores de fondo alternados */
+.cardColor1 {
+  background-color: rgb(159, 229, 200);
+}
+
+.cardColor2 {
+  background-color: #fdbb9f;
+}
+
+.cardColor3 {
+  background-color: #ddcdfe;
 }

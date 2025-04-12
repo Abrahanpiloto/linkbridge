@@ -30,11 +30,13 @@
 
 /* Contenedor para centrar y posicionar el contenido con respecto al overlay */
 .content {
-  position: relative;
-  z-index: 2;
+  /* position: relative; */
+  /* z-index: 2; */
   text-align: center;
   color: #413f3f;
   font-family: "Roboto", sans-serif;
+  /* border: 2px red solid; */
+  width: 350px;
 }
 
 /* Estilo para el título (puedes modificar según tus preferencias) */
@@ -70,9 +72,11 @@ h3 {
 }
 
 .textarea {
+  width: 50px;
   margin-top: 1.2rem;
   border-radius: 7px;
   padding: 10px;
+  /* border: 2px solid red; */
 }
 
 .buttonSave {

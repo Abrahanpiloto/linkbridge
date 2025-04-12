@@ -93,56 +93,56 @@ export default function EditProfileView() {
       <WrapperMenu />
       <div className={style.container}>
         <div className={style.content}>
-          <h2 className="h1">Edit Profile Info</h2>
-          <div>
-            {/* Aqui se muestra la imagen del usuario */}
-            <div>
-              <img
-                src={profileUrl}
-                alt="Profile"
-                width={100}
-                className={style.image}
-              />
-            </div>
+          <p className={style.title}>Edit Profile Info</p>
 
-            {/* Boton para cambiar imagen del usuario */}
-            <div>
-              <button onClick={handleOpenPicker} className={style.button}>
-                Choose profile picture
-              </button>
-              <input
-                ref={fileRef}
-                type="file"
-                style={{ display: "none" }}
-                onChange={handleChangeFile}
-              />
-            </div>
-
-            {/* Seccion de descripcion */}
-            <div className={style.description}>
-              {/* Se muestra el texto guardado (preview) solo si el input está vacío */}
-              {!inputDescription && savedDescription && (
-                <div className={style.showDescription}>
-                  <p>{savedDescription}</p>
-                </div>
-              )}
-              <textarea
-                id="description"
-                name="description"
-                rows="4"
-                maxLength="150"
-                value={inputDescription}
-                onChange={handleDescriptionChange}
-                style={{ width: "100%", resize: "none" }}
-                placeholder="Write here your description, your tastes, whatever you want!"
-              />
-            </div>
-
-            {/* Boton de guardado de la descripcion */}
-            <button onClick={handleSaveDescription} className={style.button}>
-              Save Description
+          <div className={style.imageContainer}>
+            <img
+              src={profileUrl}
+              alt="Profile"
+              width={100}
+              className={style.image}
+            />
+            <button onClick={handleOpenPicker} className={style.buttonEdit}>
+              <span className="material-icons" style={{ fontSize: "20px" }}>
+                edit
+              </span>
             </button>
           </div>
+
+          <div>
+            <input
+              ref={fileRef}
+              type="file"
+              style={{ display: "none" }}
+              onChange={handleChangeFile}
+            />
+          </div>
+          <p>{currentUser.username}</p>
+          {/* Seccion de descripcion */}
+          <div className={style.description}>
+            {/* Se muestra el texto guardado (preview) solo si el input está vacío */}
+            {!inputDescription && savedDescription && (
+              <div className={style.showDescription}>
+                <p>{savedDescription}</p>
+              </div>
+            )}
+            <textarea
+              className={style.textarea}
+              id="description"
+              name="description"
+              rows="4"
+              maxLength="150"
+              value={inputDescription}
+              onChange={handleDescriptionChange}
+              style={{ width: "100%", resize: "none" }}
+              placeholder="Write here your description, your tastes, whatever you want!"
+            />
+          </div>
+
+          {/* Boton de guardado de la descripcion */}
+          <button onClick={handleSaveDescription} className={style.buttonSave}>
+            Save Description
+          </button>
         </div>
       </div>
     </>

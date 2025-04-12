@@ -3,7 +3,6 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Protest Riot", sans-serif;
 }
 
 /* Contenedor principal: mobile-first (columna) */
@@ -20,6 +19,7 @@
   background-position: center;
   background-repeat: no-repeat; */
   padding: 25px;
+  font-family: "Protest Riot", sans-serif;
 }
 
 /* En mobile, se muestra primero el bloque de la imagen y su <p> */

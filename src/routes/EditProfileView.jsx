@@ -84,7 +84,14 @@ export default function EditProfileView() {
         onUserLoggedIn={handleUserLoggedIn}
         onUserNotLoggedIn={handleUserNotLoggedIn}
         onUserNotRegistered={handleUserNotRegistered}
-      ></AuthProvider>
+      >
+        {" "}
+        <div className={style.loading}>
+          {" "}
+          <p>Loading...</p>
+          <p>Please wait</p>
+        </div>
+      </AuthProvider>
     );
   }
 

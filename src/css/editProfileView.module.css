@@ -89,3 +89,13 @@ h3 {
 .buttonSave:hover {
   background-color: #4e575f;
 }
+
+.loading {
+  font-size: 1.6rem;
+  /* font-weight: bold; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 15rem;
+}

@@ -54,14 +54,14 @@ export default function LoginView() {
       <div className={style.loginView}>
         <div>
           <img src="/linkbridge-remove.png" alt="Logo" className={style.logo} />
-        </div>{" "}
+        </div>
         <div className={style.textContainer}>
           <p>Un puente hacia tus contenidos.</p>
 
           <p>Para comenzar, por favor crea tu cuenta.</p>
         </div>
         <button className={style.btn} onClick={handleOnClick}>
-          Login with{" "}
+          Login with
           <span className={style.googlelogo}>
             <span className={style.g1}>G</span>
             <span className={style.o1}>o</span>

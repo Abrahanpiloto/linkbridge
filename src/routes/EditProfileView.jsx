@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-import { useRef, useState } from "react";
+import { useRef, useState, useEffect } from "react";
 import AuthProvider from "../components/AuthProvider";
 import WrapperMenu from "../components/WrapperMenu";
 import {
@@ -10,28 +10,30 @@ import {
 import style from "../css/editProfileView.module.css";
 
 export default function EditProfileView() {
-  const navigate = useNavigate();
   const [currentUser, setCurrentUser] = useState({});
   const [state, setState] = useState(0);
   const [profileUrl, setProfileUrl] = useState(null);
-  const fileRef = useRef();
 
-  // Estado para la descripción guardada (preview) y para el input de texto
   const [savedDescription, setSavedDescription] = useState("");
   const [inputDescription, setInputDescription] = useState("");
+
+  const navigate = useNavigate();
+  const fileRef = useRef();
 
   async function handleUserLoggedIn(user) {
     setCurrentUser(user);
     const url = await getProfilePhotoUrl(user.profilePicture);
     setProfileUrl(url);
-    // Si el usuario ya cuenta con descripción, se la asigna al estado local
+
     setSavedDescription(user.description || "");
     setInputDescription("");
     setState(2);
   }
+
   function handleUserNotLoggedIn() {
     navigate("/login");
   }
+
   function handleUserNotRegistered(user) {
     navigate("/login");
   }
@@ -43,41 +45,68 @@ export default function EditProfileView() {
   }
 
   async function handleChangeFile(e) {
-    const files = e.target.files;
-    const fileReader = new FileReader();
+    const files = e.target.files; //Obtiene los archivos seleccionados por el usuario desde el input
+    const fileReader = new FileReader(); //Crea una instancia de FileReader para leer archivos
 
+    //Verifica que existan archivos, que FileReader se haya creado correctamente y que al menos haya un archivo
     if (files && fileReader && files.length > 0) {
-      fileReader.readAsArrayBuffer(files[0]);
+      /* ¿Qué significa onload?
+      Es una propiedad que actúa como callback: se ejecuta automáticamente cuando el FileReader termina de leer el archivo.*/
       fileReader.onload = async function () {
-        const imageData = fileReader.result;
+        /* fileReader.result contiene el resultado de la lectura (en este caso, el ArrayBuffer con los datos del archivo).
+        La variable imageData almacena dicho valor para utilizarlo posteriormente. */
+        const imageData = fileReader.result; //Obtiene los datos binarios del archivo leído
+
+        //Sube la imagen al servidor (o Firebase en este caso) y guarda el resultado
         const res = await setUserProfilePhoto(currentUser.uid, imageData);
         console.log(res);
-        // actualizacion de profilePicture en la informacion del usuario en la db, para poder obtener la url de la imagen y poder renderizarla en pantalla:
+
+        //Si la subida fue exitosa, actualiza los datos del usuario con la nueva ruta de la imagen
         if (res) {
-          const tmpUser = { ...currentUser };
-          tmpUser.profilePicture = res.metadata.fullPath;
-          await updateUser(tmpUser);
-          setCurrentUser({ ...tmpUser });
+          const tmpUser = { ...currentUser }; //Clona el objeto actual del usuario
+          tmpUser.profilePicture = res.metadata.fullPath; //Asigna la nueva ruta de la imagen de perfil
+
+          await updateUser(tmpUser); //Actualiza la información del usuario en la base de datos
+          setCurrentUser({ ...tmpUser }); //Actualiza el estado del usuario actual en React
+
+          //Obtiene la URL pública de la imagen para mostrarla en la interfaz
           const url = await getProfilePhotoUrl(currentUser.profilePicture);
-          setProfileUrl(url);
+          setProfileUrl(url); //Actualiza el estado con la nueva URL de la imagen de perfil
         }
       };
     }
+    fileReader.readAsArrayBuffer(files[0]); // Inicia la lectura del primer archivo como un ArrayBuffer (ideal para datos binarios como imágenes)
   }
 
-  // funcion para actualizar el estado local del campo description mientras se escribe:
   function handleDescriptionChange(e) {
     setInputDescription(e.target.value);
   }
 
-  // funcion para guardar la descripcion actualizada en la db firebase y actualiza la UI:
   async function handleSaveDescription() {
-    const tmp = { ...currentUser, description: inputDescription };
+    const trimmedDescription = inputDescription.trim();
 
-    await updateUser(tmp);
-    setSavedDescription(inputDescription);
-    setInputDescription("");
+    if (trimmedDescription === "" || trimmedDescription === savedDescription) {
+      return;
+    }
+
+    try {
+      const tmp = { ...currentUser, description: trimmedDescription };
+      await updateUser(tmp);
+      setSavedDescription(trimmedDescription);
+      setInputDescription("");
+    } catch (error) {
+      console.error("error al actualizar la descripcion:", error);
+    }
   }
+
+  // Precargar la imagen de perfil cada vez que profileUrl cambie:
+  useEffect(() => {
+    if (profileUrl) {
+      const img = new Image();
+      img.src = profileUrl;
+    }
+  }, [profileUrl]);
+
   if (state !== 2) {
     return (
       <AuthProvider
@@ -85,9 +114,7 @@ export default function EditProfileView() {
         onUserNotLoggedIn={handleUserNotLoggedIn}
         onUserNotRegistered={handleUserNotRegistered}
       >
-        {" "}
         <div className={style.loading}>
-          {" "}
           <p>Loading...</p>
           <p>Please wait</p>
         </div>
@@ -108,6 +135,7 @@ export default function EditProfileView() {
               alt="Profile"
               width={100}
               className={style.image}
+              loading="lazy"
             />
             <button onClick={handleOpenPicker} className={style.buttonEdit}>
               <span className="material-icons" style={{ fontSize: "20px" }}>
@@ -125,9 +153,8 @@ export default function EditProfileView() {
             />
           </div>
           <p>{currentUser.username}</p>
-          {/* Seccion de descripcion */}
+
           <div className={style.description}>
-            {/* Se muestra el texto guardado (preview) solo si el input está vacío */}
             {!inputDescription && savedDescription && (
               <div className={style.showDescription}>
                 <p>{savedDescription}</p>
@@ -146,7 +173,6 @@ export default function EditProfileView() {
             />
           </div>
 
-          {/* Boton de guardado de la descripcion */}
           <button onClick={handleSaveDescription} className={style.buttonSave}>
             Save Description
           </button>

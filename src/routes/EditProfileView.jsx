@@ -100,12 +100,12 @@ export default function EditProfileView() {
   }
 
   // Precargar la imagen de perfil cada vez que profileUrl cambie:
-  // useEffect(() => {
-  //   if (profileUrl) {
-  //     const img = new Image();
-  //     img.src = profileUrl;
-  //   }
-  // }, [profileUrl]);
+  useEffect(() => {
+    if (profileUrl) {
+      const img = new Image();
+      img.src = profileUrl;
+    }
+  }, [profileUrl]);
 
   if (state !== 2) {
     return (

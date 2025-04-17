@@ -117,8 +117,8 @@ p {
     text-align: center;
   }
 
-  p {
-    font-size: 36px;
+  .loginView p {
+    font-size: 15.5px;
   }
   .logo {
     width: 200px;
@@ -127,9 +127,5 @@ p {
   .btn {
     width: 80%;
     padding: 10px;
-  }
-
-  .textContainer {
-    font-size: 1.1rem;
   }
 }

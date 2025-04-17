@@ -117,6 +117,9 @@ p {
     text-align: center;
   }
 
+  p {
+    font-size: 14px;
+  }
   .logo {
     width: 200px;
   }

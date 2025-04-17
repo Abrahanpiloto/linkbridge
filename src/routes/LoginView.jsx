@@ -52,25 +52,36 @@ export default function LoginView() {
   if (state === 4) {
     return (
       <div className={style.loginView}>
-        <div>
-          <img src="/linkbridge-remove.png" alt="Logo" className={style.logo} />
+        <div className={style.leftContent}>
+          <div>
+            <img
+              src="/linkbridge-remove.png"
+              alt="Logo"
+              className={style.logo}
+            />
+          </div>
+          <div className={style.textContainer}>
+            <p>Un puente hacia tus contenidos.</p>
+          </div>
         </div>
-        <div className={style.textContainer}>
-          <p>Un puente hacia tus contenidos.</p>
 
-          <p>Para comenzar, por favor crea tu cuenta.</p>
+        <div className={style.rightContent}>
+          <div>
+            <p>Para comenzar, por favor crea tu cuenta.</p>
+          </div>
+
+          <button className={style.btn} onClick={handleOnClick}>
+            Login with{" "}
+            <span className={style.googlelogo}>
+              <span className={style.g1}>G</span>
+              <span className={style.o1}>o</span>
+              <span className={style.o2}>o</span>
+              <span className={style.g2}>g</span>
+              <span className={style.l}>l</span>
+              <span className={style.e}>e</span>
+            </span>
+          </button>
         </div>
-        <button className={style.btn} onClick={handleOnClick}>
-          Login with
-          <span className={style.googlelogo}>
-            <span className={style.g1}>G</span>
-            <span className={style.o1}>o</span>
-            <span className={style.o2}>o</span>
-            <span className={style.g2}>g</span>
-            <span className={style.l}>l</span>
-            <span className={style.e}>e</span>
-          </span>
-        </button>
       </div>
     );
   }

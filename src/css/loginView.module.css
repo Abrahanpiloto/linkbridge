@@ -2,34 +2,56 @@
   width: 100%;
   height: 100vh;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  background-image: url(/public/rrss.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 .logo {
-  width: 380px;
+  width: 320px;
   padding: 0.6rem;
-  /* display: block; */
-  /* margin: 0 auto; */
 }
+
+.leftContent {
+  width: 50%;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  /* border: 2px solid red; */
+}
+
+p {
+  font-size: 18px;
+  font-family: "Protest Riot", sans-serif;
+  color: #333333;
+}
+
 .textContainer {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   font-size: 1.3rem;
   color: black;
-  /* text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.7); */
-  /* padding: 1rem; */
 }
+
+.rightContent {
+  width: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  /* border: 2px solid green; */
+}
+
 .btn {
   background-color: #174572;
   color: #fff;
   border: none;
-  margin-top: 1rem;
   padding: 8px 54px;
   font-size: 16px;
-  /* font-weight: bold; */
   text-decoration: none;
   letter-spacing: 1px;
   border-radius: 4px;
@@ -37,6 +59,8 @@
   transition: background-color 0.3s ease, transform 0.3s ease;
   transform: none;
   box-shadow: 0 4px 6px rgba(10, 10, 10, 0.5);
+  /* border: 2px solid green; */
+  margin-top: 1rem;
 }
 
 /* Colores Google */
@@ -62,14 +86,13 @@
 }
 
 .btn:hover {
+  transform: none;
   background-color: #0b0f13; /* Tono ligeramente más oscuro */
   font-weight: bold;
-  transform: none;
 }
 
 .loading {
   font-size: 1.6rem;
-  /* font-weight: bold; */
   display: flex;
   flex-direction: column;
   align-items: center;

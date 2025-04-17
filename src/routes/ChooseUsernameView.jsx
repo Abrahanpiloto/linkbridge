@@ -47,7 +47,7 @@ export default function ChooseUsernameView() {
     return (
       <div className={style.chooseUsername}>
         <div className={style.textContainer}>
-          <h2>Bienvenido {currentUser.displayName}</h2>
+          <h3>Bienvenido {currentUser.displayName}</h3>
           <p>
             Para completar el proceso, por favor, elige un nombre de usuario.
           </p>

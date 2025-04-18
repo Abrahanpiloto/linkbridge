@@ -25,6 +25,7 @@ export default function DashboardView() {
 
   // Lista de clases a asignar cíclicamente
   const colorClass = [style.cardColor1, style.cardColor2, style.cardColor3];
+  const publicUrl = `${window.location.origin}/u/${currentUser.username}`;
 
   async function handleUserLoggedIn(user) {
     setCurrentUser(user);
@@ -115,9 +116,28 @@ export default function DashboardView() {
     <div className={style.container}>
       <WrapperMenu />
 
+      {/* Sección para compartir tu card URL LinkBridge
+      <div className={style.publicLinkBox}>
+        <h3>Tu enlace público:</h3>
+        <div className={style.copyContainer}>
+          <input
+            type="text"
+            readOnly
+            value={publicUrl}
+            className={style.publicLinkInput}
+          />
+          <button
+            className={style.btnCopy}
+            onClick={() => navigator.clipboard.writeText(publicUrl)}
+          >
+            Copiar enlace
+          </button>
+        </div>
+      </div> */}
+
       <div className={style.containerDouble}>
         <div className={style.formContainer}>
-          <h1>Crea tus enlaces aquí</h1>
+          <h2>Crea tus enlaces aquí</h2>
           <form
             className={style.containerForm}
             action=""
@@ -143,6 +163,25 @@ export default function DashboardView() {
               value="Create new link"
             />
           </form>
+
+          {/* Sección para compartir tu card URL LinkBridge*/}
+          <div className={style.publicLinkBox}>
+            <h5>Tu enlace público es este:</h5>
+            <div className={style.copyContainer}>
+              <input
+                type="text"
+                readOnly
+                value={publicUrl}
+                className={style.publicLinkInput}
+              />
+              <button
+                className={style.btnCopy}
+                onClick={() => navigator.clipboard.writeText(publicUrl)}
+              >
+                Copiar enlace
+              </button>
+            </div>
+          </div>
         </div>
 
         <div className={style.containerLinks}>

@@ -73,6 +73,43 @@
   gap: 1rem;
   /* border: 2px solid red; */
 }
+
+/* ----- Enlace Publico ----- */
+.publicLinkBox {
+  margin-bottom: 1.5rem;
+  padding: 1rem;
+  background: #f5f5f5;
+  border-radius: 8px;
+  color: black;
+}
+
+.copyContainer {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.publicLinkInput {
+  flex: 1;
+  min-width: 0;
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.btnCopy {
+  padding: 0.5rem 1rem;
+  border: none;
+  background: #0070f3;
+  color: white;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.btnCopy:hover {
+  background: #3c91f3;
+}
+
 /* Teléfonos móviles (pantallas pequeñas) */
 @media (max-width: 600px) {
   .containerDouble {

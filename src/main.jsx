@@ -21,3 +21,13 @@ createRoot(document.getElementById("root")).render(
     </Routes>
   </BrowserRouter>
 );
+
+/* NOTA IMPORTANTE
+en React Router la sintaxis :username es solo para definir el parámetro en el código, no va con el colon (:) en la URL real.
+El :username le dice a React Router “coge lo que vaya después de /u/ y mételo en useParams().username”.
+No forma parte literal de la URL.
+Ejemplo:
+http://localhost:5173/u/abrahan
+/u/ → coincide con la parte estática u/ de tu ruta.
+abrahan → coincide con el parámetro :username.
+*/

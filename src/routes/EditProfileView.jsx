@@ -127,7 +127,7 @@ export default function EditProfileView() {
       <WrapperMenu />
       <div className={style.container}>
         <div className={style.content}>
-          <p className={style.title}>Edit Profile Info</p>
+          <p className={style.title}>Edita tu perfil</p>
 
           <div className={style.imageContainer}>
             <img
@@ -169,7 +169,7 @@ export default function EditProfileView() {
               value={inputDescription}
               onChange={handleDescriptionChange}
               style={{ width: "100%", resize: "none" }}
-              placeholder="Write here your description, your tastes, whatever you want!"
+              placeholder="Escribe aquí tu descripción, tus gustos, lo que quieras!"
             />
           </div>
 

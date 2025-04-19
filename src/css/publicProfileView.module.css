@@ -29,7 +29,7 @@ body {
   font-family: "Helvetica Neue", Arial, sans-serif;
 }
 
-img {
+.image img {
   border-radius: 50%;
   width: 110px;
   height: 110px;
@@ -41,7 +41,7 @@ img {
   color: white;
 }
 
-p {
+.text p {
   color: white;
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
     "Lucida Sans Unicode", Geneva, Verdana, sans-serif;

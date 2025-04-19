@@ -6,6 +6,7 @@ import {
   getUserPublicProfileInfo,
 } from "../firebase/firebaseConfig";
 import PublicLink from "../components/PublicLinks";
+import styles from "../css/publicProfileView.module.css";
 
 export default function PublicProfileView() {
   const params = useParams();
@@ -29,6 +30,7 @@ export default function PublicProfileView() {
             userInfo.profileInfo.profilePicture
           );
           setUrl(url);
+          console.log(profile);
         } else {
           setState(7);
         }
@@ -53,17 +55,24 @@ export default function PublicProfileView() {
   }
 
   return (
-    <div>
-      <h3>Public Profile View</h3>
-      <div>
-        <img src={url} alt="photo user" width={110} />
-      </div>
-      <h2>{profile?.profileInfo?.username}</h2>
-      <h3>{profile?.profileInfo?.displayName}</h3>
-      <div>
-        {profile?.linksInfo.map((link) => (
-          <PublicLink key={link.docId} url={link.url} title={link.title} />
-        ))}
+    <div className={styles.container}>
+      <div className={styles.card}>
+        {/* <h3>Public Profile View</h3> */}
+        <div className={styles.image}>
+          <img src={url} alt="photo user" width={110} />
+        </div>
+        <div className={styles.text}>
+          <h2>{profile?.profileInfo?.username}</h2>
+          <p>{profile?.profileInfo?.description}</p>
+        </div>
+
+        <div className={styles.containerLinks}>
+          {profile?.linksInfo.map((link) => (
+            <div key={link.docId} className={styles.linkItem}>
+              <PublicLink url={link.url} title={link.title} />
+            </div>
+          ))}
+        </div>
       </div>
     </div>
   );

@@ -1,14 +1,9 @@
-body {
-  /* height: 100vh; */
+.container {
   background-image: url(/public/ladrillos.jpg);
   background-size: cover;
-  /* background-position: center; */
   background-repeat: no-repeat;
-}
-.container {
   display: flex;
-  border: 2px solid red;
-
+  /* border: 2px solid red; */
   align-items: center;
   justify-content: center;
   min-height: 100vh;
@@ -18,7 +13,7 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  max-width: 260px;
+  max-width: 290px;
   min-height: 480px;
   margin: 2rem auto;
   padding: 1.5rem;
@@ -31,6 +26,8 @@ body {
 
 .image img {
   border-radius: 50%;
+  box-shadow: 0 4px 8px rgba(241, 241, 241, 0.664);
+
   width: 110px;
   height: 110px;
   border: 1.5px solid white;
@@ -70,4 +67,30 @@ body {
 .link {
   color: whithe;
   text-decoration: none;
+}
+
+.noUser {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  background-color: antiquewhite;
+}
+
+.noUserImage {
+  width: 220px; /* ajusta al tamaño que necesites */
+  height: auto;
+  margin-bottom: 1rem;
+}
+
+.cargando {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  background-color: antiquewhite;
 }

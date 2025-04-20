@@ -43,13 +43,22 @@ export default function PublicProfileView() {
   }, [params]);
 
   if (loading) {
-    return <h4>Loading please wait...</h4>;
+    return (
+      <div className={styles.cargando}>
+        <h4>Cargando por favor espere...</h4>
+      </div>
+    );
   }
 
   if (state === 7) {
     return (
-      <div>
-        <h2>El usuario no existe</h2>
+      <div className={styles.noUser}>
+        <img
+          src="/public/not-user.png"
+          alt="Usuario no encontrado"
+          className={styles.noUserImage}
+        />
+        <h2>Disculpe, pero el usuario no existe</h2>
       </div>
     );
   }
@@ -57,7 +66,6 @@ export default function PublicProfileView() {
   return (
     <div className={styles.container}>
       <div className={styles.card}>
-        {/* <h3>Public Profile View</h3> */}
         <div className={styles.image}>
           <img src={url} alt="photo user" width={110} />
         </div>

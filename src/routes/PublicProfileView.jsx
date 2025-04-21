@@ -81,6 +81,20 @@ export default function PublicProfileView() {
             </div>
           ))}
         </div>
+        <div className={styles.linkBridge}>
+          <p>
+            Hecho en{" "}
+            <span>
+              <a
+                href={"https://linkbridge.netlify.app"}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                LinkBridge
+              </a>
+            </span>
+          </p>
+        </div>
       </div>
     </div>
   );

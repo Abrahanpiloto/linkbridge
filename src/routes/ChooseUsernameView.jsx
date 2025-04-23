@@ -52,9 +52,11 @@ export default function ChooseUsernameView() {
             Para completar el proceso, por favor, elige un nombre de usuario.
           </p>
           {state === 5 ? (
-            <p>
-              Lo siento, el nombre de usuario ya existe, por favor elige otro
-            </p>
+            <div>
+              <p>
+                Lo siento, el nombre de usuario ya existe, por favor elige otro
+              </p>
+            </div>
           ) : (
             ""
           )}

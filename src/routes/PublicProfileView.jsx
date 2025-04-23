@@ -71,7 +71,9 @@ export default function PublicProfileView() {
         </div>
         <div className={styles.text}>
           <h2>{profile?.profileInfo?.username}</h2>
-          <p>{profile?.profileInfo?.description}</p>
+          <div className={styles.description}>
+            <p>{profile?.profileInfo?.description}</p>
+          </div>
         </div>
 
         <div className={styles.containerLinks}>

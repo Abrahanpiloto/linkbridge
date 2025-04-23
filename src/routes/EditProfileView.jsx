@@ -165,7 +165,7 @@ export default function EditProfileView() {
               id="description"
               name="description"
               rows="4"
-              maxLength="150"
+              maxLength="110"
               value={inputDescription}
               onChange={handleDescriptionChange}
               style={{ width: "100%", resize: "none" }}

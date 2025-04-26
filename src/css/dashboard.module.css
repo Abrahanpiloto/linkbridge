@@ -115,15 +115,25 @@
 
 /* Teléfonos móviles (pantallas pequeñas) */
 @media (max-width: 600px) {
+  .container {
+    background-image: none;
+    /* width: 100vw; */
+    height: 100vh;
+    background-color: #343434e8;
+    border: 7px solid green;
+  }
   .containerDouble {
     flex-direction: column;
     gap: 2rem;
     padding: 2rem;
     align-items: center;
+    /* width: 100vw; */
+    height: 100vh;
   }
 
   .containerLinks {
     grid-template-columns: 1fr;
+    border: 2px solid red;
   }
 
   .buttonCreateLink {
@@ -133,6 +143,8 @@
 
   .containerForm {
     padding: 1rem;
+    /* width: 100vw;
+    height: 100vh; */
   }
 }
 

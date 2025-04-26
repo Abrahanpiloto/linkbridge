@@ -64,6 +64,11 @@ nav a:hover {
 
 /* --- MOBILE STYLES --- */
 @media (max-width: 768px) {
+  .containerWrapper {
+    /* width: 100vw; */
+    /* height: 100vh; */
+    /* background-color: blue; */
+  }
   .hamburger {
     display: flex;
   }

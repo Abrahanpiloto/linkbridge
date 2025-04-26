@@ -8,6 +8,9 @@ import SignOutView from "./routes/SignOutView.jsx";
 import PublicProfileView from "./routes/PublicProfileView.jsx";
 import ChooseUsernameView from "./routes/ChooseUsernameView.jsx";
 
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
 createRoot(document.getElementById("root")).render(
   <BrowserRouter>
     <Routes>
@@ -19,6 +22,16 @@ createRoot(document.getElementById("root")).render(
       <Route path="u/:username" element={<PublicProfileView />} />
       <Route path="/choose-username" element={<ChooseUsernameView />} />
     </Routes>
+    <ToastContainer
+      // position="bottom-left"
+      position="bottom-center"
+      autoClose={3000}
+      hideProgressBar={false}
+      newestOnTop={false}
+      closeOnClick
+      pauseOnHover
+      draggable
+    />
   </BrowserRouter>
 );
 

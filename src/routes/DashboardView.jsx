@@ -14,6 +14,8 @@ import style from "../css/dashboard.module.css";
 import { confirmAlert } from "react-confirm-alert";
 import "react-confirm-alert/src/react-confirm-alert.css";
 
+import { toast } from "react-toastify";
+
 export default function DashboardView() {
   const [currentUser, setCurrentUser] = useState({});
   const [state, setState] = useState(0);
@@ -112,28 +114,21 @@ export default function DashboardView() {
       ],
     });
   }
+
+  const handleCopy = () => {
+    navigator.clipboard
+      .writeText(publicUrl)
+      .then(() => {
+        toast.success("¡Enlace copiado al portapapeles!");
+      })
+      .catch(() => {
+        toast.error("Hubo un error al copiar el enlace.");
+      });
+  };
+
   return (
     <div className={style.container}>
       <WrapperMenu />
-
-      {/* Sección para compartir tu card URL LinkBridge
-      <div className={style.publicLinkBox}>
-        <h3>Tu enlace público:</h3>
-        <div className={style.copyContainer}>
-          <input
-            type="text"
-            readOnly
-            value={publicUrl}
-            className={style.publicLinkInput}
-          />
-          <button
-            className={style.btnCopy}
-            onClick={() => navigator.clipboard.writeText(publicUrl)}
-          >
-            Copiar enlace
-          </button>
-        </div>
-      </div> */}
 
       <div className={style.containerDouble}>
         <div className={style.formContainer}>
@@ -174,10 +169,7 @@ export default function DashboardView() {
                 value={publicUrl}
                 className={style.publicLinkInput}
               />
-              <button
-                className={style.btnCopy}
-                onClick={() => navigator.clipboard.writeText(publicUrl)}
-              >
+              <button className={style.btnCopy} onClick={handleCopy}>
                 Copiar enlace
               </button>
             </div>

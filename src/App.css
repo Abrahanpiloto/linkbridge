@@ -2,6 +2,10 @@
 /* font-family: "Roboto", sans-serif; */
 /* font-family: "Fjalla One", sans-serif; */
 /* font-family: "Protest Riot", sans-serif; */
+.html,
+body {
+  height: 100vh;
+}
 
 .emoji {
   font-size: 28px;

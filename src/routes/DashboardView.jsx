@@ -161,7 +161,7 @@ export default function DashboardView() {
 
           {/* Sección para compartir tu card URL LinkBridge*/}
           <div className={style.publicLinkBox}>
-            <h5>Tu enlace público es este:</h5>
+            <h5>Tu enlace para compartir es este:</h5>
             <div className={style.copyContainer}>
               <input
                 type="text"

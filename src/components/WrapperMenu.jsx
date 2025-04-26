@@ -7,9 +7,7 @@ export default function WrapperMenu({ children }) {
   const toggleMenu = () => setIsOpen(!isOpen);
   return (
     <div className={style.containerWrapper}>
-      <div className={style.logo}>
-        <img src="/linkbridge-remove.png" alt="Logo" className={style.logo} />
-      </div>
+      <img src="/linkbridge-remove.png" alt="Logo" className={style.logo} />
 
       <button
         className={`${style.hamburger} ${isOpen ? style.open : ""}`}

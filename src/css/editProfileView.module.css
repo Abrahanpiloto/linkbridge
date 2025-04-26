@@ -15,8 +15,7 @@
 .title {
   font-size: 1.8rem;
   margin-bottom: 1.2rem;
-  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
-    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  font-family: "santor", sans-serif;
 }
 
 /* Contenedor para centrar y posicionar el contenido con respecto al overlay */
@@ -24,7 +23,7 @@
   background: rgba(255, 255, 255, 0.8);
   text-align: center;
   color: #413f3f;
-  font-family: "Roboto", sans-serif;
+  font-family: "santor", sans-serif;
   /* border: 2px red solid; */
   width: 350px;
   padding: 1rem;
@@ -55,14 +54,12 @@ h3 {
 }
 
 .content p {
-  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
-    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  font-family: "santor", sans-serif;
   font-weight: bold;
 }
 
 .showDescription p {
-  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
-    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  font-family: "santor", sans-serif;
   font-weight: 400;
 }
 /* Estilos para el botón */

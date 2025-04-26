@@ -24,7 +24,7 @@ createRoot(document.getElementById("root")).render(
     </Routes>
     <ToastContainer
       // position="bottom-left"
-      position="bottom-center"
+      position="top-left"
       autoClose={3000}
       hideProgressBar={false}
       newestOnTop={false}

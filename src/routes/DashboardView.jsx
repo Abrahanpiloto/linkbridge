@@ -127,71 +127,72 @@ export default function DashboardView() {
   };
 
   return (
-    <div className={style.container}>
+    <>
       <WrapperMenu />
-
-      <div className={style.containerDouble}>
-        <div className={style.formContainer}>
-          <h2>Crea tus enlaces aquí</h2>
-          <form
-            className={style.containerForm}
-            action=""
-            onSubmit={handleOnSubmit}
-          >
-            <label htmlFor="title">Titulo</label>
-            <input
-              type="text"
-              name="title"
-              onChange={handleOnChange}
-              value={title}
-            />
-            <label htmlFor="url">Url</label>
-            <input
-              type="text"
-              name="url"
-              onChange={handleOnChange}
-              value={url}
-            />
-            <input
-              className={style.buttonCreateLink}
-              type="submit"
-              value="Create new link"
-            />
-          </form>
-
-          {/* Sección para compartir tu card URL LinkBridge*/}
-          <div className={style.publicLinkBox}>
-            <h5>Tu enlace para compartir es este:</h5>
-            <div className={style.copyContainer}>
+      <div className={style.container}>
+        <div className={style.containerDouble}>
+          <div className={style.formContainer}>
+            <h2>Crea tus enlaces aquí</h2>
+            <form
+              className={style.containerForm}
+              action=""
+              onSubmit={handleOnSubmit}
+            >
+              <label htmlFor="title">Titulo</label>
               <input
                 type="text"
-                readOnly
-                value={publicUrl}
-                className={style.publicLinkInput}
+                name="title"
+                onChange={handleOnChange}
+                value={title}
               />
-              <button className={style.btnCopy} onClick={handleCopy}>
-                Copiar enlace
-              </button>
+              <label htmlFor="url">Url</label>
+              <input
+                type="text"
+                name="url"
+                onChange={handleOnChange}
+                value={url}
+              />
+              <input
+                className={style.buttonCreateLink}
+                type="submit"
+                value="Create new link"
+              />
+            </form>
+
+            {/* Sección para compartir el card URL LinkBridge*/}
+            <div className={style.publicLinkBox}>
+              <h5>Tu enlace para compartir es este:</h5>
+              <div className={style.copyContainer}>
+                <input
+                  type="text"
+                  readOnly
+                  value={publicUrl}
+                  className={style.publicLinkInput}
+                />
+                <button className={style.btnCopy} onClick={handleCopy}>
+                  Copiar
+                </button>
+              </div>
             </div>
           </div>
-        </div>
 
-        <div className={style.containerLinks}>
-          {links.slice(0, 6).map((link, index) => {
-            return (
-              <Link
-                key={link.docId}
-                docId={link.docId}
-                url={link.url}
-                title={link.title}
-                onUpdate={handleUpdateLink}
-                onDelete={handleDeleteLink}
-                colorClass={colorClass[index % colorClass.length]} // Se pasa la clase dinámica
-              />
-            );
-          })}
+          <div className={style.containerLinks}>
+            {links.slice(0, 6).map((link, index) => {
+              return (
+                <Link
+                  key={link.docId}
+                  docId={link.docId}
+                  url={link.url}
+                  title={link.title}
+                  onUpdate={handleUpdateLink}
+                  onDelete={handleDeleteLink}
+                  colorClass={colorClass[index % colorClass.length]} // Se pasa la clase dinámica
+                />
+              );
+            })}
+          </div>
         </div>
       </div>
-    </div>
+    </>
   );
 }

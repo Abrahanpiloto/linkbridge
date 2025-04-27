@@ -31,7 +31,11 @@
   font-size: small;
   overflow: hidden;
 }
-
+@media (max-width: 480px) {
+  .cardLink {
+    width: 100%;
+  }
+}
 input {
   border: none;
   border-radius: 6px;

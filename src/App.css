@@ -2,7 +2,13 @@
 /* font-family: "Roboto", sans-serif; */
 /* font-family: "Fjalla One", sans-serif; */
 /* font-family: "Protest Riot", sans-serif; */
-
+html,
+body {
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  /* overflow-x: hidden; */
+}
 .emoji {
   font-size: 28px;
 }

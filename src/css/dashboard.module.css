@@ -118,7 +118,7 @@
   .container {
     background-image: none;
     /* width: 100vw; */
-    height: 100vh;
+    /* max-height: 100vh; */
     background-color: #343434e8;
     border: 7px solid green;
   }
@@ -128,7 +128,8 @@
     padding: 2rem;
     align-items: center;
     /* width: 100vw; */
-    height: 100vh;
+    /* height: 100vh; */
+    height: fit-content;
   }
 
   .containerLinks {

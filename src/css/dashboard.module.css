@@ -121,6 +121,7 @@
     /* max-height: 100vh; */
     background-color: #343434e8;
     /* border: 7px solid green; */
+    height: fit-content;
   }
   .containerDouble {
     flex-direction: column;

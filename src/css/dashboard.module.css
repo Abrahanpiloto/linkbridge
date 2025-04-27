@@ -120,7 +120,7 @@
     /* width: 100vw; */
     /* max-height: 100vh; */
     background-color: #343434e8;
-    border: 7px solid green;
+    /* border: 7px solid green; */
   }
   .containerDouble {
     flex-direction: column;
@@ -134,7 +134,7 @@
 
   .containerLinks {
     grid-template-columns: 1fr;
-    border: 2px solid red;
+    /* border: 2px solid red; */
   }
 
   .buttonCreateLink {

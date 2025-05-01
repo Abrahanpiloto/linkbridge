@@ -5,11 +5,12 @@
   background-repeat: no-repeat;
   height: 100vh;
   width: 100%;
-  position: relative;
+  /* position: relative; */
   display: flex;
   align-items: center;
   justify-content: center;
-  flex-direction: column;
+  /* flex-direction: column; */
+  /* border: 2px red solid; */
 }
 
 .title {

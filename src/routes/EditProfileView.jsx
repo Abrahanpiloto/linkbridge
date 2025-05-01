@@ -2,12 +2,14 @@ import { useNavigate } from "react-router-dom";
 import { useRef, useState, useEffect } from "react";
 import AuthProvider from "../components/AuthProvider";
 import WrapperMenu from "../components/WrapperMenu";
+
 import {
   getProfilePhotoUrl,
   setUserProfilePhoto,
   updateUser,
 } from "../firebase/firebaseConfig";
 import style from "../css/editProfileView.module.css";
+import UserProfileCard from "../components/UserProfileCard";
 
 export default function EditProfileView() {
   const [currentUser, setCurrentUser] = useState({});
@@ -115,8 +117,8 @@ export default function EditProfileView() {
         onUserNotRegistered={handleUserNotRegistered}
       >
         <div className={style.loading}>
-          <p>Loading...</p>
-          <p>Please wait</p>
+          <p>Cargando...</p>
+          <p>Porfavor espere </p>
         </div>
       </AuthProvider>
     );
@@ -126,9 +128,9 @@ export default function EditProfileView() {
     <>
       <WrapperMenu />
       <div className={style.container}>
+        <UserProfileCard />
         <div className={style.content}>
           <p className={style.title}>Edita tu perfil</p>
-
           <div className={style.imageContainer}>
             <img
               src={profileUrl}
@@ -143,7 +145,6 @@ export default function EditProfileView() {
               </span>
             </button>
           </div>
-
           <div>
             <input
               ref={fileRef}
@@ -153,7 +154,6 @@ export default function EditProfileView() {
             />
           </div>
           <p>{currentUser.username}</p>
-
           <div className={style.description}>
             {!inputDescription && savedDescription && (
               <div className={style.showDescription}>
@@ -172,7 +172,6 @@ export default function EditProfileView() {
               placeholder="Escribe aquí tu descripción, tus gustos, lo que quieras!"
             />
           </div>
-
           <button onClick={handleSaveDescription} className={style.buttonSave}>
             Save Description
           </button>

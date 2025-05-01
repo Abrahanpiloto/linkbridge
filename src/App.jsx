@@ -1,10 +1,38 @@
 import { useNavigate } from "react-router-dom";
 import "./App.css";
-
 import style from "./css/home.module.css";
+import AuthProvider from "./components/AuthProvider";
+import { useState } from "react";
 
 function App() {
+  const [state, setState] = useState(0);
   const navigate = useNavigate();
+
+  async function handleUserLoggedIn(user) {
+    // setCurrentUser(user);
+    setState(2);
+    navigate("/dashboard");
+  }
+  function handleUserNotLoggedIn() {
+    navigate("/login");
+  }
+  function handleUserNotRegistered(user) {
+    navigate("/login");
+  }
+  if (state === 0) {
+    return (
+      <AuthProvider
+        onUserLoggedIn={handleUserLoggedIn}
+        onUserNotLoggedIn={handleUserNotLoggedIn}
+        onUserNotRegistered={handleUserNotRegistered}
+      >
+        <div className={style.loading}>
+          <p>Cargando...</p>
+          <p>Porfavor espere</p>
+        </div>
+      </AuthProvider>
+    );
+  }
 
   function handleOnClick(e) {
     navigate("/login");

@@ -62,6 +62,14 @@ export default function LoginView() {
           </div>
           <div className={style.textContainer}>
             <p>Un puente hacia tus contenidos.</p>
+            <p>
+              Organiza todos tus links en una tarjeta digital con un diseño
+              minimalista y elegante. Ideal para profesionales, emprendedores,
+              creadores de contenido y cualquier persona que quiere conectar de
+              manera efectiva todas sus redes sociales y recursos.
+              <br />
+              ¡Haz de tus enlaces un puente hacia tu mundo digital!
+            </p>
           </div>
         </div>
 

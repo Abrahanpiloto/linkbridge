@@ -20,13 +20,13 @@ export default function WrapperMenu({ children }) {
 
       <nav className={`${style.nav} ${isOpen ? style.open : ""}`}>
         <Link to="/dashboard" onClick={() => setIsOpen(false)}>
-          Links
+          Enlaces
         </Link>
         <Link to="/dashboard-profile" onClick={() => setIsOpen(false)}>
-          Profile
+          Perfil
         </Link>
         <Link to="/signout" onClick={() => setIsOpen(false)}>
-          Signout
+          Salir
         </Link>
       </nav>
 

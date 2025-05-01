@@ -158,7 +158,7 @@
   .containerForm {
     padding: 1rem;
     width: 19rem;
-    /* border: 2px solid green; */
+    border: 2px solid green;
   }
 
   .buttonCreateLink {
@@ -169,6 +169,7 @@
   .publicLinkBox {
     width: 19rem;
     font-size: 16px;
+    border: 2px solid red;
   }
 
   .copyContainer {
@@ -184,10 +185,8 @@
     gap: 1rem;
     overflow-y: auto; /* o scroll */
     max-height: 50vh;
-    /* border: 2px solid red; */
-    /* overflow-y: auto; */
+    border: 2px solid red;
     -webkit-overflow-scrolling: touch;
-    /* max-height: 60vh; */
   }
 }
 

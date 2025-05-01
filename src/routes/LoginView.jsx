@@ -54,11 +54,7 @@ export default function LoginView() {
       <div className={style.loginView}>
         <div className={style.leftContent}>
           <div>
-            <img
-              src="/linkbridge-remove.png"
-              alt="Logo"
-              className={style.logo}
-            />
+            <img src="/linkbridge.jpg" alt="Logo" className={style.logo} />
           </div>
           <div className={style.textContainer}>
             <p>Un puente hacia tus contenidos.</p>
@@ -88,6 +84,9 @@ export default function LoginView() {
               <span className={style.l}>l</span>
               <span className={style.e}>e</span>
             </span>
+          </button>
+          <button className={style.btnYaTengoUnaCuenta}>
+            Ya tengo una cuenta
           </button>
         </div>
       </div>

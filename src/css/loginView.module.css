@@ -97,6 +97,17 @@ p {
   font-weight: bold;
 }
 
+.btnYaTengoUnaCuenta {
+  margin-top: 1rem;
+  background: none; /* quitar fondo */
+  border: none; /* quitar borde */
+  font-size: 13px;
+  color: #f4b400;
+  text-align: inherit; /* heredar alineación de texto */
+  cursor: pointer; /* puntero al pasar el ratón */
+  appearance: none; /* elimina estilos nativos en Safari/Chrome */
+  outline: none; /* quita el outline al hacer foco (añade uno personalizado si hace falta accesibilidad) */
+}
 /* Colores Google */
 .googlelogo .g1,
 .googlelogo .g2 {

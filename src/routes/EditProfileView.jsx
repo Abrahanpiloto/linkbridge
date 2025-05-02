@@ -7,6 +7,7 @@ import {
   getProfilePhotoUrl,
   setUserProfilePhoto,
   updateUser,
+  getLinks,
 } from "../firebase/firebaseConfig";
 import style from "../css/editProfileView.module.css";
 import UserProfileCard from "../components/UserProfileCard";
@@ -19,6 +20,8 @@ export default function EditProfileView() {
   const [savedDescription, setSavedDescription] = useState("");
   const [inputDescription, setInputDescription] = useState("");
 
+  const [linksInfo, setLinksInfo] = useState([]);
+
   const navigate = useNavigate();
   const fileRef = useRef();
 
@@ -26,6 +29,10 @@ export default function EditProfileView() {
     setCurrentUser(user);
     const url = await getProfilePhotoUrl(user.profilePicture);
     setProfileUrl(url);
+
+    // Trae los enlaces desde Firestore (implementa esta función)
+    const fetchedLinks = await getLinks(user.uid);
+    setLinksInfo(fetchedLinks);
 
     setSavedDescription(user.description || "");
     setInputDescription("");
@@ -128,7 +135,16 @@ export default function EditProfileView() {
     <>
       <WrapperMenu />
       <div className={style.container}>
-        <UserProfileCard />
+        <UserProfileCard
+          url={profileUrl}
+          profile={{
+            profileInfo: {
+              username: currentUser.username,
+              description: savedDescription,
+            },
+            linksInfo: linksInfo, // [{ docId, url, title }, …]
+          }}
+        />
         <div className={style.content}>
           <p className={style.title}>Edita tu perfil</p>
           <div className={style.imageContainer}>

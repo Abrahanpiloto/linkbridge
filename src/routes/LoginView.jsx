@@ -85,9 +85,9 @@ export default function LoginView() {
               <span className={style.e}>e</span>
             </span>
           </button>
-          <button className={style.btnYaTengoUnaCuenta}>
+          {/* <button className={style.btnYaTengoUnaCuenta}>
             Ya tengo una cuenta
-          </button>
+          </button> */}
         </div>
       </div>
     );
@@ -99,8 +99,8 @@ export default function LoginView() {
       onUserNotRegistered={handleUserNotRegistered}
     >
       <div className={style.loading}>
-        <p>Loading...</p>
-        <p>Please wait</p>
+        <p>Cargando...</p>
+        <p>Por favor espere</p>
       </div>
     </AuthProvider>
   );

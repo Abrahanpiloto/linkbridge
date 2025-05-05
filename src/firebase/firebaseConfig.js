@@ -37,6 +37,7 @@ export const db = getFirestore(app);
 
 export const storage = getStorage(app);
 
+//comprueba si existe el documento “users/uid”
 export async function userExists(uid) {
   const docRef = doc(db, "users", uid);
 
@@ -46,6 +47,7 @@ export async function userExists(uid) {
   return res.exists();
 }
 
+//busca si un username ya está en uso (devuelve uid o null)
 export async function existsUsername(username) {
   const users = [];
   const docsRef = collection(db, "users");
@@ -60,7 +62,7 @@ export async function existsUsername(username) {
   return users.length > 0 ? users[0].uid : null;
 }
 
-// Funcion para registrar un nuevo usuario
+//crea o mergea un nuevo usuario en “users/uid”
 export async function registerNewUser(user) {
   try {
     const collectionRef = collection(db, "users");
@@ -143,6 +145,7 @@ export async function deleteLink(docId) {
   }
 }
 
+//sube un archivo al Storage bajo “images/uid”
 export async function setUserProfilePhoto(uid, file) {
   try {
     const imageRef = ref(storage, `images/${uid}`);

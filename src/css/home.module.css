@@ -19,7 +19,7 @@
   background-position: center;
   background-repeat: no-repeat; */
   padding: 25px;
-  font-family: "Protest Riot", sans-serif;
+  /* font-family: "Protest Riot", sans-serif; */
 }
 
 /* En mobile, se muestra primero el bloque de la imagen y su <p> */
@@ -77,6 +77,7 @@
   max-width: 500px;
   line-height: 1.5;
   color: black;
+  /* font-family: "Caveat", cursive; */
   /* text-shadow: 0 0 4px white; */
 }
 

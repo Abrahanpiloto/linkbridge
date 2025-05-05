@@ -59,7 +59,7 @@ function App() {
 
       <div className={style.right}>
         <img src="/linkbridge-remove.png" alt="Logo" className={style.logo} />
-        <p>Un puente hacia tus contenidos.</p>
+        <p> puente hacia tus contenidos.</p>
       </div>
     </div>
   );

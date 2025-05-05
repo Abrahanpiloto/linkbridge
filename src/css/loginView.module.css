@@ -49,12 +49,13 @@ h4 {
   margin-bottom: 2rem;
 }
 p {
-  font-size: 18px;
-  /* font-weight: 200; */
-  font-family: "Raleway", sans-serif;
+  font-size: 28px;
+  font-weight: 800;
+  font-family: "Caveat", cursive;
+
   color: white;
   text-align: center;
-  font-style: italic;
+  /* font-style: italic; */
 }
 
 .textContainer {
@@ -78,6 +79,9 @@ p {
 
 .rightContent p {
   font-style: normal;
+  font-family: "Courier New", Courier, monospace;
+  font-size: 14px;
+  font-weight: 400;
 }
 .btn {
   background-color: #051e38;
@@ -188,7 +192,8 @@ p {
   }
 
   .loginView p {
-    font-size: 20px;
+    font-size: 24px;
+    font-weight: 800;
   }
   .logo {
     width: 200px;

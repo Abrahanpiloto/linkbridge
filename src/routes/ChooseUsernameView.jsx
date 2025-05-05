@@ -81,13 +81,15 @@ export default function ChooseUsernameView() {
   if (state === 6) {
     return (
       <div className={style.congratulations}>
-        <h2>
-          Felicidades <span className="emoji">🥳</span>ya puedes ir al dashboard
-          a crear tus links! <span className="emoji">🚀</span>
-        </h2>
-        <Link className={style.btnContinue} to="/dashboard">
-          Continuar
-        </Link>
+        <div className={style.text}>
+          <h1>
+            Felicidades <span className="emoji">🥳</span>ya puedes ir al
+            dashboard a crear tus links! <span className="emoji">🚀</span>
+          </h1>
+          <Link className={style.btnContinue} to="/dashboard">
+            Continuar
+          </Link>
+        </div>
       </div>
     );
   }

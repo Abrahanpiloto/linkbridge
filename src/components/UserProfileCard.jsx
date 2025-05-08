@@ -8,7 +8,7 @@ export default function UserProfileCard({ url, profile }) {
         <img src={url} alt="photo user" width={110} />
       </div>
       <div className={styles.text}>
-        <h2>{profile?.profileInfo?.username}</h2>
+        <h2 className={styles.username}>{profile?.profileInfo?.username}</h2>
         <div className={styles.description}>
           <p>{profile?.profileInfo?.description}</p>
         </div>

@@ -68,7 +68,11 @@ export default function LoginView() {
         <div className={style.loginView}>
           <div className={style.leftContent}>
             <div>
-              <img src="/linkbridge.jpg" alt="Logo" className={style.logo} />
+              <img
+                src="/linkbridge-large.png"
+                alt="Logo"
+                className={style.logo}
+              />
             </div>
             <div className={style.textContainer}>
               <p>Un puente hacia tus contenidos.</p>

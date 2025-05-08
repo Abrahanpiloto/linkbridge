@@ -153,7 +153,7 @@ export default function EditProfileView() {
               alt="Profile"
               width={100}
               className={style.image}
-              loading="lazy"
+              // loading="lazy"
             />
             <button onClick={handleOpenPicker} className={style.buttonEdit}>
               <span className="material-icons" style={{ fontSize: "20px" }}>

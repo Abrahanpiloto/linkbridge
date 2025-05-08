@@ -24,7 +24,8 @@
 /* Asegurar que el contenido esté encima del overlay */
 .leftContent,
 .rightContent,
-.loading {
+.loading,
+.logo {
   position: relative;
   z-index: 2;
 }
@@ -84,7 +85,7 @@ p {
   font-weight: 400;
 }
 .btn {
-  background-color: #051e38;
+  background-color: #174572;
   color: #fff;
   border: none;
   padding: 8px 54px;
@@ -148,32 +149,19 @@ p {
 
 .btn:hover {
   transform: none;
-  background-color: #174572;
+  background-color: #051e38;
   font-weight: bold;
 }
 
-.loading {
+/* .loading {
   font-size: 1.6rem;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   margin-top: 15rem;
-}
+} */
 
-.yaTengoCuenta {
-  /* margin-top: 1rem; */
-  cursor: pointer;
-}
-
-.yaTengoCuenta a {
-  font-size: 12px;
-  font-weight: 400;
-}
-
-.yaTengoCuenta a:hover {
-  color: #f4b400;
-}
 @media (max-width: 768px) {
   .loginView {
     background-color: #b3dbeb;

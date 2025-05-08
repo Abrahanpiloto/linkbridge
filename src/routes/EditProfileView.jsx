@@ -22,8 +22,6 @@ export default function EditProfileView() {
 
   const [linksInfo, setLinksInfo] = useState([]);
 
-  const [loading, setLoading] = useState(true);
-
   const navigate = useNavigate();
   const fileRef = useRef();
 

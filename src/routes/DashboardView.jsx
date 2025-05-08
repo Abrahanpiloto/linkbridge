@@ -49,9 +49,8 @@ export default function DashboardView() {
         onUserNotLoggedIn={handleUserNotLoggedIn}
         onUserNotRegistered={handleUserNotRegistered}
       >
-        <div className={style.loading}>
-          <p>Cargando...</p>
-          <p>Porfavor espere</p>
+        <div className={style.containerLoader}>
+          <span className={style.loader}></span>
         </div>
       </AuthProvider>
     );

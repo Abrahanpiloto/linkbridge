@@ -136,16 +136,18 @@ export default function EditProfileView() {
     <>
       <WrapperMenu />
       <div className={style.container}>
-        <UserProfileCard
-          url={profileUrl}
-          profile={{
-            profileInfo: {
-              username: currentUser.username,
-              description: savedDescription,
-            },
-            linksInfo: linksInfo, // [{ docId, url, title }, …]
-          }}
-        />
+        <div className={style.containerUserProfileCard}>
+          <UserProfileCard
+            url={profileUrl}
+            profile={{
+              profileInfo: {
+                username: currentUser.username,
+                description: savedDescription,
+              },
+              linksInfo: linksInfo, // [{ docId, url, title }, …]
+            }}
+          />
+        </div>
         <div className={style.content}>
           <p className={style.title}>Edita tu perfil</p>
           <div className={style.imageContainer}>

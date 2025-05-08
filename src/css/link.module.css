@@ -35,9 +35,11 @@
 .textContent {
   flex: 1; /* ocupa todo el espacio disponible */
   white-space: nowrap; /* evita que el texto se rompa en varias líneas */
-  /* overflow: hidden; oculta el texto que se desborda */
+  overflow: hidden; /* oculta el texto que se desborda */
   text-overflow: ellipsis; /* muestra puntos suspensivos cuando el texto es muy largo */
+  /* border: 2px solid red; */
 }
+
 @media (max-width: 480px) {
   .cardLink {
     width: 100%;

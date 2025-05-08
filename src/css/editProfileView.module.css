@@ -12,6 +12,45 @@
   /* flex-direction: column; */
   /* border: 2px red solid; */
 }
+.containerLoader {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* border: 2px solid red; */
+  /* position: absolute; */
+  margin-top: 15rem;
+}
+.loader {
+  font-size: 48px;
+  color: black;
+  display: inline-block;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 400;
+  position: relative;
+}
+.loader:after {
+  content: "Loading";
+  position: relative;
+  z-index: 5;
+}
+.loader:before {
+  content: "";
+  height: 6px;
+  border: 1px solid;
+  border-radius: 10px;
+  width: 100%;
+  position: absolute;
+  bottom: 0px;
+  background: linear-gradient(#ff3d00 100%, transparent 0) no-repeat;
+  background-size: 0% auto;
+  animation: 3.5s lineGrow linear infinite;
+}
+
+@keyframes lineGrow {
+  to {
+    background-size: 100% auto;
+  }
+}
 
 .title {
   font-size: 1.8rem;
@@ -74,8 +113,6 @@ h3 {
   border: none;
   font-size: 1rem;
   cursor: pointer;
-
-  /* transition: background-color 0.3s ease; */
 }
 
 .showDescription p {

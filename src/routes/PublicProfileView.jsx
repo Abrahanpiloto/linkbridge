@@ -13,7 +13,7 @@ export default function PublicProfileView() {
   const params = useParams();
   const [profile, setProfile] = useState(null);
   const [url, setUrl] = useState("");
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(true);
   const [state, setState] = useState(0);
 
   useEffect(() => {
@@ -45,8 +45,8 @@ export default function PublicProfileView() {
 
   if (loading) {
     return (
-      <div className={styles.cargando}>
-        <h4>Cargando por favor espere</h4>
+      <div className={styles.containerLoader}>
+        <span className={styles.loader}></span>
       </div>
     );
   }
@@ -68,41 +68,5 @@ export default function PublicProfileView() {
     <div className={styles.container}>
       <UserProfileCard url={url} profile={profile} />
     </div>
-
-    // <div className={styles.container}>
-    //   <div className={styles.card}>
-    //     <div className={styles.image}>
-    //       <img src={url} alt="photo user" width={110} />
-    //     </div>
-    //     <div className={styles.text}>
-    //       <h2>{profile?.profileInfo?.username}</h2>
-    //       <div className={styles.description}>
-    //         <p>{profile?.profileInfo?.description}</p>
-    //       </div>
-    //     </div>
-
-    //     <div className={styles.containerLinks}>
-    //       {profile?.linksInfo.map((link) => (
-    //         <div key={link.docId} className={styles.linkItem}>
-    //           <PublicLink url={link.url} title={link.title} />
-    //         </div>
-    //       ))}
-    //     </div>
-    //     <div className={styles.linkBridge}>
-    //       <p>
-    //         Hecho en{" "}
-    //         <span>
-    //           <a
-    //             href={"https://linkbridge.netlify.app"}
-    //             target="_blank"
-    //             rel="noopener noreferrer"
-    //           >
-    //             LinkBridge
-    //           </a>
-    //         </span>
-    //       </p>
-    //     </div>
-    //   </div>
-    // </div>
   );
 }

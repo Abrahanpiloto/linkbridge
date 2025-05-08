@@ -22,6 +22,8 @@ export default function EditProfileView() {
 
   const [linksInfo, setLinksInfo] = useState([]);
 
+  const [loading, setLoading] = useState(true);
+
   const navigate = useNavigate();
   const fileRef = useRef();
 
@@ -123,9 +125,8 @@ export default function EditProfileView() {
         onUserNotLoggedIn={handleUserNotLoggedIn}
         onUserNotRegistered={handleUserNotRegistered}
       >
-        <div className={style.loading}>
-          <p>Cargando...</p>
-          <p>Porfavor espere </p>
+        <div className={style.containerLoader}>
+          <span className={style.loader}></span>
         </div>
       </AuthProvider>
     );

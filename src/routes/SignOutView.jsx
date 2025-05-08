@@ -20,7 +20,17 @@ export default function SignOutView() {
       onUserNotLoggedIn={handleUserNotLoggedIn}
       onUserNotRegistered={handleUserNotRegistered}
     >
-      <div>Loading...</div>
+      <div
+        style={{
+          fontSize: "64px",
+          color: "black",
+          textAlign: "center",
+          marginTop: "250px",
+          fontWeight: "bold",
+        }}
+      >
+        Saliendo Bye 👋🏻
+      </div>
     </AuthProvider>
   );
 }

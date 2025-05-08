@@ -37,13 +37,13 @@
 }
 
 /* Estilo para el título */
-h3 {
+/* h3 {
   margin-bottom: 20px;
   font-size: 2rem;
-  /* font-weight: 600; */
+  font-weight: 600;
   color: black;
   border: 2px red solid;
-}
+} */
 .imageContainer {
   margin-bottom: 1rem;
   /* border: 2px red solid; */

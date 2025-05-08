@@ -99,7 +99,9 @@ export default function ChooseUsernameView() {
       onUserNotLoggedIn={handleUserNotLoggedIn}
       onUserNotRegistered={handleUserNotRegistered}
     >
-      ChooseUsernameView
+      <div className={style.containerLoader}>
+        <span className={style.loader}></span>
+      </div>
     </AuthProvider>
   );
 }

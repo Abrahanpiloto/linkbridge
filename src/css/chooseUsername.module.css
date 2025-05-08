@@ -1,5 +1,4 @@
 .chooseUsername {
-  /* background-color: rgb(231, 227, 225); */
   background-image: url(/public/benjamin.jpg);
   background-size: cover;
   background-repeat: no-repeat;
@@ -83,7 +82,7 @@
   /* border: 2px solid red; */
 }
 .text {
-  font-size: 2rem;
+  font-size: 1.6rem;
   margin-top: 5rem;
   /* border: 2px solid red; */
   color: white;
@@ -100,8 +99,49 @@
 
   .text {
     font-size: 28px;
-    color: black;
+    color: white;
     /* border: 2px solid red; */
     margin-top: 0;
+  }
+}
+
+/* ----- Spin Loader ---- */
+.containerLoader {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* border: 2px solid red; */
+  /* position: absolute; */
+  margin-top: 15rem;
+}
+.loader {
+  font-size: 48px;
+  color: black;
+  display: inline-block;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 400;
+  position: relative;
+}
+.loader:after {
+  content: "Loading";
+  position: relative;
+  z-index: 5;
+}
+.loader:before {
+  content: "";
+  height: 6px;
+  border: 1px solid;
+  border-radius: 10px;
+  width: 100%;
+  position: absolute;
+  bottom: 0px;
+  background: linear-gradient(#ff3d00 100%, transparent 0) no-repeat;
+  background-size: 0% auto;
+  animation: 3.5s lineGrow linear infinite;
+}
+
+@keyframes lineGrow {
+  to {
+    background-size: 100% auto;
   }
 }
